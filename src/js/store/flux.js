@@ -37,6 +37,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			fetchCharacterDetails: async (characterUid) => {
+				try {
+					const response = await fetch(`https://www.swapi.tech/api/people/${characterUid}`);
+					const data = await response.json();
+
+					// Update the global store with fetched data
+					setStore({ characterDetails: data.result.properties });
+				} catch (error) {
+					console.error("Error fetching character details:", error);
+				}
 			}
 		}
 	};

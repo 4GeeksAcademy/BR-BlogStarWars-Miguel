@@ -1,11 +1,12 @@
 .scrolling-container {
     overflow-x: scroll;
-    white-space: nowrap;
+    white-space:nowrap;
   }
 
 .card{
     flex: 0 0 auto;
     width: 300px;
+    margin-bottom: 2px;
 }
 
 .logo{
